@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "789565226209",
+    "project_id": "vgprogram-80b20",
+    "storage_bucket": "vgprogram-80b20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789565226209:android:a4ef7a21c74340d5178ba0",
+        "android_client_info": {
+          "package_name": "kr.ac.hs.vgprogram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "789565226209-s8ht6vc3o6681md5fddhg8618o8av7ek.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.ac.hs.vgprogram",
+            "certificate_hash": "9210a2a2699f2c1310d7a28ff019f3e5cc2ee87d"
+          }
+        },
+        {
+          "client_id": "789565226209-s7f3b1n2f0s2d8joh2mncepc6g884k85.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoyLCiFuK474Ol_qUE2pPhkGOT3KYTWI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "789565226209-s7f3b1n2f0s2d8joh2mncepc6g884k85.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -13,9 +13,9 @@ public class signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        Button button2 = findViewById(R.id.button2);
+        Button signFinish = findViewById(R.id.signFinish);
 
-        button2.setOnClickListener(new View.OnClickListener() {
+        signFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),vgprog.class);
