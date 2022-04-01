@@ -10,12 +10,12 @@
         android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="142dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="27dp"
         android:text="회원가입"
         android:textColor="@color/purple_200"
         android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/signNameTxet"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -30,148 +30,131 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/signName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="50dp"
-        android:text="이름"
-        android:textSize="18dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/signNameTxet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
         android:ems="10"
+        android:hint="이름"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="이름 입력"
         app:layout_constraintStart_toStartOf="@+id/signName"
-        app:layout_constraintTop_toTopOf="@+id/signName" />
-
-
-    <EditText
-        android:id="@+id/signIdText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="아이디 입력"
-        app:layout_constraintEnd_toEndOf="@+id/signNameTxet"
-        app:layout_constraintStart_toStartOf="@+id/signNameTxet"
-        app:layout_constraintTop_toBottomOf="@+id/signNameTxet" />
+        app:layout_constraintTop_toBottomOf="@+id/signName" />
 
     <TextView
         android:id="@+id/signId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="14dp"
         android:text="아이디"
         android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="@+id/signIdText"
-        app:layout_constraintStart_toStartOf="@+id/signIdText" />
+        app:layout_constraintStart_toStartOf="@+id/signNameTxet"
+        app:layout_constraintTop_toBottomOf="@+id/signNameTxet" />
 
     <TextView
-        android:id="@+id/signIdCheck"
+        android:id="@+id/signName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="32dp"
-        android:text="아이디 확인"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="20dp"
+        android:text="이름"
         android:textSize="18dp"
-        app:layout_constraintStart_toStartOf="@+id/signIdText"
-        app:layout_constraintTop_toBottomOf="@+id/signIdText" />
+        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintTop_toBottomOf="@+id/back" />
 
     <EditText
-        android:id="@+id/signIdCheckText"
+        android:id="@+id/signIdText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
         android:ems="10"
+        android:hint="아이디"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="아이디 입력"
-        app:layout_constraintStart_toStartOf="@+id/signIdCheck"
-        app:layout_constraintTop_toTopOf="@+id/signIdCheck" />
+        app:layout_constraintStart_toStartOf="@+id/signId"
+        app:layout_constraintTop_toBottomOf="@+id/signId" />
+
+    <Button
+        android:id="@+id/signFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="22dp"
+        android:text="회원가입 완료"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/signPWCheckText" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/signPW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="30dp"
         android:text="비밀번호"
         android:textSize="18dp"
-        app:layout_constraintStart_toStartOf="@+id/signIdCheckText"
-        app:layout_constraintTop_toBottomOf="@+id/signIdCheckText" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="8dp"
-        android:text="중복확인"
-        app:layout_constraintBottom_toBottomOf="@+id/signIdCheckText"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
     <EditText
         android:id="@+id/signPWText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="비밀번호"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="비밀번호 입력"
-        app:layout_constraintEnd_toEndOf="@+id/signIdText"
-        app:layout_constraintStart_toStartOf="@+id/signIdText"
+        app:layout_constraintStart_toStartOf="@+id/signPW"
         app:layout_constraintTop_toBottomOf="@+id/signPW" />
-
-    <TextView
-        android:id="@+id/signPWCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="35dp"
-        android:text="비밀번호 확인"
-        app:layout_constraintStart_toStartOf="@+id/signPWText"
-        app:layout_constraintTop_toBottomOf="@+id/signPWText" />
 
     <EditText
         android:id="@+id/signPWCheckText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:ems="10"
+        android:hint="비밀번호 확인"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="비밀번호 입력"
         app:layout_constraintStart_toStartOf="@+id/signPWCheck"
         app:layout_constraintTop_toBottomOf="@+id/signPWCheck" />
+
+    <TextView
+        android:id="@+id/signPWCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="29dp"
+        android:text="비밀번호 확인"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signPWText" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="E-mail"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="@+id/signIdText"
+        app:layout_constraintTop_toBottomOf="@+id/signIdText" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:text="확인"
+        android:layout_marginEnd="28dp"
+        android:text="중복 확인"
         app:layout_constraintBaseline_toBaselineOf="@+id/signPWCheckText"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/signFinish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="30dp"
-        android:text="회원가입 완료"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
