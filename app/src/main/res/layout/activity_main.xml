@@ -7,97 +7,105 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="27dp"
-        android:text="채식라이프"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/login_id"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="64dp"
+        android:src="@drawable/vgimg"
+        app:layout_constraintBottom_toTopOf="@+id/login_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    /*아이디 입력*/
 
+    //회원가입 버튼
 
-    <EditText
-        android:id="@+id/login_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="아이디"
-        app:layout_constraintBottom_toTopOf="@+id/login_button"
-        app:layout_constraintEnd_toStartOf="@+id/login_button"
-        app:layout_constraintTop_toTopOf="@+id/login_button" />
-
-
+    <Button
+        android:id="@+id/join_button"
+        android:layout_width="208dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="116dp"
+        android:text="회원가입"
+        android:backgroundTint="#0E797A"
+        android:textColor="#F7F0ED"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwd_button" />
     //비밀번호 입력
     <EditText
         android:id="@+id/login_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="15dp"
         android:ems="10"
         android:hint="비밀번호"
-        app:layout_constraintEnd_toStartOf="@+id/login_button"
-        app:layout_constraintTop_toBottomOf="@+id/login_button" />
-    //로그인 버튼
+        app:layout_constraintBottom_toTopOf="@+id/login_button"
+        app:layout_constraintStart_toStartOf="@+id/login_button"
+        app:layout_constraintTop_toBottomOf="@+id/login_id" />
 
+
+    //비밀번호찾기 버튼
+
+    <Button
+        android:id="@+id/passwd_button"
+        android:layout_width="204dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="11dp"
+        android:text="비밀번호 찾기"
+        android:backgroundTint="#0E797A"
+        android:textColor="#F7F0ED"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/join_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_button" />
+
+    /*아이디 입력*/
+
+    <EditText
+        android:id="@+id/login_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="440dp"
+        android:ems="10"
+        android:hint="아이디"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/login_password"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    //로그인 버튼
 
     <Button
         android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="188dp"
-        android:layout_marginEnd="7dp"
+        android:layout_width="206dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="14dp"
         android:text="로그인"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    //?
-
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="55dp"
-        android:layout_height="143dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        android:backgroundTint="#0E797A"
+        android:textColor="#F7F0ED"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/id_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
-
-
-    //회원가입 버튼
-    <Button
-        android:id="@+id/join_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="9dp"
-        android:text="회원가입"
-        app:layout_constraintEnd_toEndOf="@+id/id_button"
-        app:layout_constraintTop_toBottomOf="@+id/id_button" />
+        app:layout_constraintTop_toBottomOf="@+id/login_password" />
     //아이디찾기 버튼
-
-
     <Button
         android:id="@+id/id_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="13dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="7dp"
         android:text="아이디 찾기"
-        app:layout_constraintEnd_toStartOf="@+id/passwd_button"
-        app:layout_constraintTop_toBottomOf="@+id/login_password" />
-    //비밀번호찾기 버튼
-    <Button
-        android:id="@+id/passwd_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
-        android:text="비밀번호 찾기"
-        app:layout_constraintBaseline_toBaselineOf="@+id/id_button"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:backgroundTint="#0E797A"
+        android:textColor="#F7F0ED"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/passwd_button"
+        app:layout_constraintEnd_toEndOf="@+id/join_button"
+        app:layout_constraintStart_toStartOf="@+id/passwd_button"
+        app:layout_constraintTop_toBottomOf="@+id/login_button" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
