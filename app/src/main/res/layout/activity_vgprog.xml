@@ -6,14 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".vgprog">
 
-    <ImageView
-        android:id="@+id/vgmain"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/vgimg"
-        app:layout_constraintEnd_toStartOf="parent"
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:openDrawer="start">
+
+        <!-- main content -->
+        <include
+            layout="@layout/activity_vgprog_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- navigation drawer-->//사이드 메뉴바의 헤더
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/header"
+            app:menu="@menu/drawerlayout" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
