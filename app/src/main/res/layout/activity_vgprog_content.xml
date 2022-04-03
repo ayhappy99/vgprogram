@@ -6,12 +6,15 @@
 
     <include layout="@layout/appbar"/>
 //채식라이프 이미지 제목에 추가
+
     <ImageView
         android:id="@+id/vgmain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
         android:src="@drawable/vgimg"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
