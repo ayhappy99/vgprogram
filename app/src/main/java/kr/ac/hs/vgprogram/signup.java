@@ -15,6 +15,7 @@ public class signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         Button signFinish = findViewById(R.id.signFinish);
 
+        //회원가입 완료 버튼 클릭
         signFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
