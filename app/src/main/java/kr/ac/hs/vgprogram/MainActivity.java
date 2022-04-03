@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         id_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),idfind.class);
+                startActivity(intent);
 
             }
         });
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         passwd_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),pwfind.class);
+                startActivity(intent);
 
             }
         });
