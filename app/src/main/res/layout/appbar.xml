@@ -12,7 +12,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-//메뉴 아이콘 ?
+//메뉴 아이콘 ? 아마
         <ImageView
             android:id="@+id/iv_menu"
             android:layout_width="30dp"
