@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".vgprog">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/vgmain"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/vgimg"
-        android:drawableBottom="@drawable/vgimg"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/vgimg"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
