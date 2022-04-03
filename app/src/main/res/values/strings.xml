@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">vgprogram</string>
+    <string name="app_name">채식라이프</string>
+    <string name="open">열기</string>
+    <string name="closed">닫기</string>
+
 </resources>
