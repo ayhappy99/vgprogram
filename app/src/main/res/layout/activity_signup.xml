@@ -153,7 +153,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
-        android:text="중복 확인"
+        android:text="확인"
         app:layout_constraintBaseline_toBaselineOf="@+id/signPWCheckText"
         app:layout_constraintEnd_toEndOf="parent" />
 
