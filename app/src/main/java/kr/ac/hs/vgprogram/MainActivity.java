@@ -15,24 +15,25 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 
 
 public class MainActivity extends AppCompatActivity {
-    private FirebaseAuth firebaseAuth;
+    private FirebaseAuth mfirebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
-
-
-
-
-
-
+    private DatabaseReference mDatabaseRef;
+    private EditText signNameTxet;
+    private EditText signIdText;
+    private EditText editTextTextEmailAddress;
+    private EditText signPWText;
+    private EditText signPWCheckText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        mfirebaseAuth = FirebaseAuth.getInstance();
 
         EditText login_id  = findViewById(R.id.login_id);
         EditText login_password  = findViewById(R.id.login_password);
@@ -108,14 +109,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loginUser(String id, String password) {
-        firebaseAuth.signInWithEmailAndPassword(id, password)
+        mfirebaseAuth.signInWithEmailAndPassword(id, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // 로그인 성공
                             Toast.makeText(MainActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
-                            firebaseAuth.addAuthStateListener(firebaseAuthListener);
+                            mfirebaseAuth.addAuthStateListener(firebaseAuthListener);
+                            Intent intent = new Intent(MainActivity.this, activity_vgprog_content.class);
                         } else {
                             // 로그인 실패
                             Toast.makeText(MainActivity.this, "아이디 또는 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();

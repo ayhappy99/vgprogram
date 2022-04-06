@@ -13,9 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vgprogram"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".GoogleSignIn"
-            android:exported="false" />
+
+
+
+
         <activity android:name=".foodfd" />
         <activity android:name=".recipe" />
         <activity android:name=".mypage" />
@@ -30,7 +31,8 @@
         <activity
             android:name=".MyAdapter"
             tools:ignore="Instantiatable" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
