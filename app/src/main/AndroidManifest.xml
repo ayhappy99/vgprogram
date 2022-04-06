@@ -13,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vgprogram"
         android:usesCleartextTraffic="true">
-        <activity android:name=".foodfd"></activity>
+        <activity
+            android:name=".GoogleSignIn"
+            android:exported="false" />
+        <activity android:name=".foodfd" />
         <activity android:name=".recipe" />
         <activity android:name=".mypage" />
         <activity
@@ -22,9 +25,10 @@
         <activity
             android:name=".idfind"
             android:exported="false" />
-        <activity android:name=".vgprog" />
+        <activity android:name=".activity_vgprog_content" />
         <activity android:name=".signup" />
-        <activity android:name=".MyAdapter"
+        <activity
+            android:name=".MyAdapter"
             tools:ignore="Instantiatable" />
         <activity android:name=".MainActivity">
             <intent-filter>

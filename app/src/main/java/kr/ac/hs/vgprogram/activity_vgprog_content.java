@@ -10,19 +10,17 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 
 import com.google.android.material.navigation.NavigationView;
 
 import me.relex.circleindicator.CircleIndicator3;
 
-public class vgprog extends AppCompatActivity {
+public class activity_vgprog_content extends AppCompatActivity {
 
     private ViewPager2 mPager;
     private FragmentStateAdapter pagerAdapter;
@@ -109,7 +107,7 @@ public class vgprog extends AppCompatActivity {
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(
-                vgprog.this,
+                activity_vgprog_content.this,
                 drawLayout,
                 toolbar,
                 R.string.open,

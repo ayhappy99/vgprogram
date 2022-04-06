@@ -18,6 +18,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    //로그인 버튼
+
 
     <Button
         android:id="@+id/login_button"
@@ -30,7 +32,11 @@
         app:layout_constraintBottom_toTopOf="@+id/id_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_password" />
+        app:layout_constraintTop_toBottomOf="@+id/login_password"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    //회원가입 버튼
 
     <Button
         android:id="@+id/join_button"
@@ -43,7 +49,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwd_button" />
+        app:layout_constraintTop_toBottomOf="@+id/passwd_button"
+        tools:ignore="TouchTargetSizeCheck" />
+    /*아이디 입력*/
 
     <EditText
         android:id="@+id/login_id"
@@ -55,9 +63,11 @@
         app:layout_constraintBottom_toTopOf="@+id/login_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="TouchTargetSizeCheck" />
 
 
+    //아이디찾기 버튼
 
     <Button
         android:id="@+id/id_button"
@@ -70,8 +80,9 @@
         app:layout_constraintBottom_toTopOf="@+id/passwd_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_button" />
-
+        app:layout_constraintTop_toBottomOf="@+id/login_button"
+        tools:ignore="TouchTargetSizeCheck" />
+    //비밀번호 입력
 
     <EditText
         android:id="@+id/login_password"
@@ -80,10 +91,13 @@
         android:layout_marginBottom="44dp"
         android:ems="10"
         android:hint="비밀번호"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/login_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_id" />
+        app:layout_constraintTop_toBottomOf="@+id/login_id"
+        tools:ignore="TouchTargetSizeCheck" />
+    //비밀번호찾기 버튼
 
     <Button
         android:id="@+id/passwd_button"
@@ -96,7 +110,8 @@
         app:layout_constraintBottom_toTopOf="@+id/join_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_button" />
+        app:layout_constraintTop_toBottomOf="@+id/id_button"
+        tools:ignore="TouchTargetSizeCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
