@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 
 
+import android.app.ProgressDialog;
 
 import android.content.Intent;
 
@@ -27,6 +28,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
+
+import java.util.HashMap;
+
+import static android.content.ContentValues.TAG;
+
+
 public class signup extends AppCompatActivity {
     TextView text;
     private FirebaseAuth mfirebaseAuth;
@@ -46,8 +53,12 @@ public class signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
 
+
         mfirebaseAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("vgprogram");
+
+
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
 
         signIdText = (EditText) findViewById(R.id.signIdText);
@@ -104,12 +115,67 @@ public class signup extends AppCompatActivity {
                     Toast.makeText(signup.this, "일치하지 않습니다.", Toast.LENGTH_LONG).show();
                 }
 
+            }
+
+        });
+
+
+        //회원가입 완료 버튼 클릭
+        Button signFinish = (Button)findViewById(R.id.signFinish);
+        signFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String email = editTextTextEmailAddress.getText().toString().trim();
+                String uid = signIdText.getText().toString().trim();
+                String name = signNameTxet.getText().toString().trim();
+                String pwd = signPWText.getText().toString().trim();
+                String pwdcheck = signPWCheckText.getText().toString().trim();
+
+                if(pwd.equals(pwdcheck)){
+                    firebaseAuth.createUserWithEmailAndPassword(email,pwd).addOnCompleteListener(signup.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+
+                                FirebaseUser user = firebaseAuth.getCurrentUser();
+                                String email = user.getEmail();
+                                String uid = user.getUid();
+                                String name = signNameTxet.getText().toString().trim();
+
+                                HashMap<Object,String> hashMap = new HashMap<>();
+
+                                hashMap.put("uid",uid);
+                                hashMap.put("email",email);
+                                hashMap.put("name",name);
+
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                DatabaseReference reference = database.getReference("Users");
+                                reference.child(uid).setValue(hashMap);
+
+                                Intent intent = new Intent(signup.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                                Toast.makeText(signup.this, "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT).show();
+                            }else {
+                                Toast.makeText(signup.this, "이미 존재하는 아이디 입니다.", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                        }
+                    });
+
+
+                }else{
+                    Toast.makeText(signup.this, "비밀번호가 틀렸습니다. 다시 입력해 주세요.", Toast.LENGTH_SHORT).show();
+                    return;
+
+                }
+
 
             }
         });
 
 
-    }
 
+            }
+        }
 
-}
