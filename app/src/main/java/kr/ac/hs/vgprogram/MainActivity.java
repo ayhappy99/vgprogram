@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
                 !login_password.getText().toString().equals("")){
                     loginUser(login_id.getText().toString(),
                             login_password.getText().toString());
+
+
                 }else {
                     Toast.makeText(MainActivity.this, "아이디와 비밀번호를 입력하세요.",
                             Toast.LENGTH_LONG).show();
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
-                    Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                    Intent intent = new Intent(MainActivity.this, recipe.class);
                     startActivity(intent);
                     finish();
                 } else {
@@ -106,7 +108,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    Intent intent = new Intent(MainActivity.this, recipe.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                }
+            }
+        };
+
+
     }
+
+
+
+
+
 
     private void loginUser(String id, String password) {
         mfirebaseAuth.signInWithEmailAndPassword(id, password)
@@ -117,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                             // 로그인 성공
                             Toast.makeText(MainActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
                             mfirebaseAuth.addAuthStateListener(firebaseAuthListener);
-                            Intent intent = new Intent(MainActivity.this, activity_vgprog_content.class);
+
                         } else {
                             // 로그인 실패
                             Toast.makeText(MainActivity.this, "아이디 또는 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
