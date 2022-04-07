@@ -26,7 +26,7 @@
         <activity
             android:name=".idfind"
             android:exported="false" />
-        <activity android:name=".activity_vgprog_content" />
+
         <activity android:name=".signup" />
         <activity
             android:name=".MyAdapter"
@@ -39,6 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity_vgprog_content" />
     </application>
 
 </manifest>

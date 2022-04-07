@@ -16,24 +16,21 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 
 public class MainActivity extends AppCompatActivity {
-    private FirebaseAuth mfirebaseAuth;
+    private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
-    private DatabaseReference mDatabaseRef;
-    private EditText signNameTxet;
-    private EditText signIdText;
-    private EditText editTextTextEmailAddress;
-    private EditText signPWText;
-    private EditText signPWCheckText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mfirebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
         EditText login_id  = findViewById(R.id.login_id);
         EditText login_password  = findViewById(R.id.login_password);
@@ -54,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
                     loginUser(login_id.getText().toString(),
                             login_password.getText().toString());
 
-
                 }else {
                     Toast.makeText(MainActivity.this, "아이디와 비밀번호를 입력하세요.",
                             Toast.LENGTH_LONG).show();
@@ -69,7 +65,10 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
-                    Intent intent = new Intent(MainActivity.this, recipe.class);
+
+                    Intent intent = new Intent(MainActivity.this, activity_vgprog_content.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+
                     startActivity(intent);
                     finish();
                 } else {
@@ -130,20 +129,26 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void loginUser(String id, String password) {
-        mfirebaseAuth.signInWithEmailAndPassword(id, password)
+        firebaseAuth.signInWithEmailAndPassword(id, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+
                             // 로그인 성공
+                            Intent intent = new Intent(MainActivity.this,activity_vgprog_content.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
                             Toast.makeText(MainActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
-                            mfirebaseAuth.addAuthStateListener(firebaseAuthListener);
+
 
                         } else {
                             // 로그인 실패
                             Toast.makeText(MainActivity.this, "아이디 또는 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
                         }
+
                     }
+
                 });
     }
 
