@@ -17,6 +17,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 
 import com.google.android.material.navigation.NavigationView;
@@ -26,6 +28,12 @@ import java.util.Objects;
 import me.relex.circleindicator.CircleIndicator3;
 
 public class activity_vgprog_content extends AppCompatActivity {
+    private ViewPager2 mPager;
+    private FragmentStateAdapter pagerAdapter;
+    private int num_page = 4;
+    private CircleIndicator3 mIndicator;
+
+
     private DrawerLayout mDrawerLayout;
     private Context context = this;
 
@@ -43,10 +51,60 @@ public class activity_vgprog_content extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_dehaze_48);
 
+
+        ImageButton beef = findViewById(R.id.beefbtn);
+        beef.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        ImageButton chick = findViewById(R.id.chickbtn);
+        beef.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        ImageButton eggg = findViewById(R.id.egggbtn);
+        beef.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        ImageButton fish = findViewById(R.id.fishbtn);
+        beef.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        ImageButton milk = findViewById(R.id.milkbtn);
+        beef.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        ImageButton vege = findViewById(R.id.vegebtn);
+        beef.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+
+
+
+
        // ActionBar actionBar = getSupportActionBar();
-
-
-
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
 
@@ -76,6 +134,38 @@ public class activity_vgprog_content extends AppCompatActivity {
 
             }
         });
+        //ViewPager2
+        mPager = findViewById(R.id.viewpager);
+//Adapter
+        pagerAdapter = new MyAdapter(this, num_page);
+        mPager.setAdapter(pagerAdapter);
+//Indicator
+        mIndicator = findViewById(R.id.indicator);
+        mIndicator.setViewPager(mPager);
+        mIndicator.createIndicators(num_page,0);
+//ViewPager Setting
+        mPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
+
+
+        mPager.setCurrentItem(1000); //시작 지점
+        mPager.setOffscreenPageLimit(4); //최대 이미지 수
+        mPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+                if (positionOffsetPixels == 0) {
+                    mPager.setCurrentItem(position);
+                }
+            }
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                mIndicator.animatePageSelected(position%num_page);
+            }
+        });
+
+
+
 
 
 

@@ -6,13 +6,13 @@
     android:gravity="center"
     android:orientation="vertical"
     >
-
-    <ImageView
+    <TextView
         android:layout_width="400dp"
         android:layout_height="200dp"
+        android:background="#EC0018"
         android:gravity="center"
-        android:src="@drawable/vegestage1"
-        />
-    
+        android:text="3"
+        android:textColor="#000000"
+        android:textSize="50dp" />
 
 </LinearLayout>
