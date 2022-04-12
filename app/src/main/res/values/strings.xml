@@ -2,5 +2,11 @@
     <string name="app_name">채식라이프</string>
     <string name="open">열기</string>
     <string name="closed">닫기</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="loading">loading\.\.\.</string>
+
+
 
 </resources>

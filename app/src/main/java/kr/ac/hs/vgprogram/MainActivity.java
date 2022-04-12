@@ -6,10 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.SignInAccount;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -17,12 +21,28 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.Api;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
     private FirebaseAuth firebaseAuth;
-    private FirebaseAuth.AuthStateListener firebaseAuthListener;
+    private static final int RC_SIGN_IN = 900;  //구글로그인 result 상수
+    private GoogleSignInClient googleSignInClient;
+    private SignInButton buttonGoogle;
 
 
     @Override
@@ -30,17 +50,36 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        EditText login_id = findViewById(R.id.login_id);
+        EditText login_password = findViewById(R.id.login_password);
 
-        EditText login_id  = findViewById(R.id.login_id);
-        EditText login_password  = findViewById(R.id.login_password);
+        buttonGoogle = findViewById(R.id.btn_googleSignIn);
+        // Google 로그인을 앱에 통합
+        // GoogleSignInOptions 개체를 구성할 때 requestIdToken을 호출
+        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
+
+        buttonGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent signInIntent = googleSignInClient.getSignInIntent();
+                startActivityForResult(signInIntent, RC_SIGN_IN);
+            }
+        });
+
+
+
 
 
 
         Button login_button = findViewById(R.id.login_button);//로그인 버튼
         Button join_button = findViewById(R.id.join_button);//회원가입 버튼
-        Button id_button = findViewById(R.id.id_button);//아이디찾기 버튼
-        Button passwd_button = findViewById(R.id.passwd_button);//비밀번호찾기 버튼
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
 
         //로그인 버튼 클릭할 경우
         login_button.setOnClickListener(new View.OnClickListener() {
@@ -60,23 +99,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-
-                    Intent intent = new Intent(MainActivity.this, activity_vgprog_content.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-
-                    startActivity(intent);
-                    finish();
-                } else {
-                }
-            }
-        };
-
-
         //회원가입 버튼 클릭할경우
         join_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,45 +109,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //아이디찾기 버튼 클릭할경우
-        id_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),idfind.class);
-                startActivity(intent);
 
-            }
-        });
-
-        //비밀번호찾기 버튼 클릭할경우
-        passwd_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),pwfind.class);
-                startActivity(intent);
-
-            }
-        });
-
-        firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    Intent intent = new Intent(MainActivity.this, recipe.class);
-                    startActivity(intent);
-                    finish();
-                } else {
-                }
-            }
-        };
 
 
     }
-
-
-
-
 
 
     private void loginUser(String id, String password) {
@@ -155,4 +142,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-}
+
+
+    }
+
+
+
+
+
+
+

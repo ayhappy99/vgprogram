@@ -11,53 +11,67 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="43dp"
+        android:layout_marginBottom="56dp"
         android:src="@drawable/vgimg"
         app:layout_constraintBottom_toTopOf="@+id/login_id"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //로그인 버튼
 
+    /*아이디 입력*/
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btn_googleSignIn"
+        android:layout_width="237dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/join_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_button">
+
+    </com.google.android.gms.common.SignInButton>
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="237dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="52dp"
         android:backgroundTint="#0E797A"
         android:text="로그인"
         android:textColor="#F7F0ED"
-        app:layout_constraintBottom_toTopOf="@+id/id_button"
+        app:layout_constraintBottom_toTopOf="@+id/btn_googleSignIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_password"
         tools:ignore="TouchTargetSizeCheck" />
 
 
-    //회원가입 버튼
+    //아이디찾기 버튼
+
+    //비밀번호 입력
 
     <Button
         android:id="@+id/join_button"
         android:layout_width="237dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="88dp"
         android:backgroundTint="#0E797A"
         android:text="회원가입"
         android:textColor="#F7F0ED"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwd_button"
+        app:layout_constraintTop_toBottomOf="@+id/btn_googleSignIn"
         tools:ignore="TouchTargetSizeCheck" />
-    /*아이디 입력*/
 
     <EditText
         android:id="@+id/login_id"
         android:layout_width="237dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="17dp"
         android:ems="10"
         android:hint="아이디"
         app:layout_constraintBottom_toTopOf="@+id/login_password"
@@ -66,29 +80,11 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:ignore="TouchTargetSizeCheck" />
 
-
-    //아이디찾기 버튼
-
-    <Button
-        android:id="@+id/id_button"
-        android:layout_width="237dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="#0E797A"
-        android:text="아이디 찾기"
-        android:textColor="#F7F0ED"
-        app:layout_constraintBottom_toTopOf="@+id/passwd_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_button"
-        tools:ignore="TouchTargetSizeCheck" />
-    //비밀번호 입력
-
     <EditText
         android:id="@+id/login_password"
         android:layout_width="237dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="33dp"
         android:ems="10"
         android:hint="비밀번호"
         android:inputType="textPassword"
@@ -98,20 +94,6 @@
         app:layout_constraintTop_toBottomOf="@+id/login_id"
         tools:ignore="TouchTargetSizeCheck" />
     //비밀번호찾기 버튼
-
-    <Button
-        android:id="@+id/passwd_button"
-        android:layout_width="237dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="35dp"
-        android:backgroundTint="#0E797A"
-        android:text="비밀번호 찾기"
-        android:textColor="#F7F0ED"
-        app:layout_constraintBottom_toTopOf="@+id/join_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_button"
-        tools:ignore="TouchTargetSizeCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
