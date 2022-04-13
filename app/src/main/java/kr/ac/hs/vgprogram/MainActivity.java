@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View view) {
                 Intent signInIntent = googleSignInClient.getSignInIntent();
+                Intent intent = new Intent(getApplicationContext(),activity_vgprog_content.class);
+                startActivity(intent);
                 startActivityForResult(signInIntent, RC_SIGN_IN);
             }
         });
