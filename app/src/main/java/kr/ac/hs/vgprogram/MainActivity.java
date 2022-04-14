@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity  {
     private static final int RC_SIGN_IN = 900;  //구글로그인 result 상수
     private GoogleSignInClient googleSignInClient;
     private SignInButton buttonGoogle;
+    final private String TAG = getClass().getSimpleName();
 
 
     @Override
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View view) {
                 if(!login_id.getText().toString().equals("")&&
-                !login_password.getText().toString().equals("")){
+                        !login_password.getText().toString().equals("")){
                     loginUser(login_id.getText().toString(),
                             login_password.getText().toString());
 
@@ -126,6 +127,7 @@ public class MainActivity extends AppCompatActivity  {
 
                             // 로그인 성공
                             Intent intent = new Intent(MainActivity.this,activity_vgprog_content.class);
+                            intent.putExtra("userid",id);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                             Toast.makeText(MainActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
@@ -142,11 +144,7 @@ public class MainActivity extends AppCompatActivity  {
     }
 
 
-
-
-
-
-    }
+}
 
 
 
