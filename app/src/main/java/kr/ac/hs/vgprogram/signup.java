@@ -1,5 +1,4 @@
 package kr.ac.hs.vgprogram;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 
@@ -13,12 +12,10 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.TextView;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -45,7 +42,6 @@ public class signup extends AppCompatActivity {
     private EditText signPWCheckText;
     private Button button2;
     private Button signFinish;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -67,19 +63,17 @@ public class signup extends AppCompatActivity {
         signPWText = (EditText) findViewById(R.id.signPWText);
         signPWCheckText = (EditText) findViewById(R.id.signPWCheckText);
         signFinish = findViewById(R.id.signFinish);
-
         signFinish.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-            // 회원가입 처리 시작
+                // 회원가입 처리 시작
                 String strEmail = editTextTextEmailAddress.getText().toString();
                 String strPwd = signPWText.getText().toString();
                 String strName = signNameTxet.getText().toString();
                 String strId = signIdText.getText().toString();
                 String strPwdCheck = signPWCheckText.getText().toString();
-
                 //파이어베이스 진행
                 mfirebaseAuth.createUserWithEmailAndPassword(strEmail,strPwd).addOnCompleteListener(signup.this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -91,20 +85,15 @@ public class signup extends AppCompatActivity {
                             account.setIdToken(firebaseUser.getUid());
                             account.setEmail(firebaseUser.getEmail());
                             account.setPwd(strPwd);
-
                             mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
                             Toast.makeText(signup.this, "회원가입에 성공했습니다", Toast.LENGTH_SHORT).show();}
                         else {
                             Toast.makeText(signup.this, "회원가입에 실패했습니다", Toast.LENGTH_SHORT).show();
-
-
                         }
                     }
                 });
-
             }
         });
-
         //비밀번호 일치 확인 버튼
         Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
@@ -175,7 +164,8 @@ public class signup extends AppCompatActivity {
         });
 
 
+    }
 
-            }
-        }
+}
+
 

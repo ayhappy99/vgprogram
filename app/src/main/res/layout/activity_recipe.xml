@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <View
             android:layout_width="match_parent"
@@ -36,8 +36,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_weight="1"
+            android:layout_height="55dp"
             android:orientation="horizontal"
 
             android:layout_marginTop="60dp"
@@ -47,7 +46,7 @@
 
             <Spinner
                 android:layout_width="260dp"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginRight="20dp"
                 android:id="@+id/typeSpinner"
@@ -57,7 +56,7 @@
 
             <Button
                 android:layout_width="80dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:textSize="15dp"
                 android:textStyle="bold"
                 android:textColor="@color/textc"
@@ -70,26 +69,43 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="470dp"
-            android:layout_margin="10dp"
-            android:background="@color/white">
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="495dp"
+                android:layout_margin="10dp"
+                android:background="@color/white">
 
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="480dp"
+                android:layout_height="460dp"
                 android:id="@+id/recipeListView"
                 android:dividerHeight="10dp"
                 android:divider="@color/white">
-
             </ListView>
 
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom">
+
+
+            <Button
+                android:id="@+id/recipewrite"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/back"
+                android:textColor="@color/textc"
+                android:text="작성하기"
+                android:drawable="@drawable/ic_baseline_create_24"
+                />
 
         </LinearLayout>
+
     </LinearLayout>
-
-
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
