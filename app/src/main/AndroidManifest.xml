@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="kr.ac.hs.vgprogram" >
+    package="kr.ac.hs.vgprogram">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,14 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vgprogram"
-        android:usesCleartextTraffic="true" >
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".recipe_detail"
+            android:name=".DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".recipe_write"
+            android:name=".SaveMemoActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".ListItem"
+            android:exported="false" />
         <activity android:name=".foodfd" />
         <activity
             android:name=".recipe"
@@ -37,7 +39,7 @@
             tools:ignore="Instantiatable" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,8 +47,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity_vgprog_content" />
-
-
     </application>
 
 </manifest>

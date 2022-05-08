@@ -1,131 +1,77 @@
 package kr.ac.hs.vgprogram;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.AsyncTask;
+
 import android.os.Bundle;
 
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import Room.AppDatabase;
+import Room.User;
+
+
+@SuppressWarnings("deprecation")
 public class recipe extends AppCompatActivity {
 
-    final private String TaG = getClass().getSimpleName();
-
-    ListView recipeListView;
-    Button recipewrite;
-
-    String login_id="";
-
-
-    ArrayList<String> titleList = new ArrayList<>();
-    ArrayList<String> seqList = new ArrayList<>();
-
+    private final int SAVE_MEMO_ACTIVITY = 1;
+    private FloatingActionButton add;
+    //리사이클러 뷰
+    private RecyclerView recyclerView;
+    private LinearLayoutManager linearLayoutManager;
+    private RecyclerAdapter adapter;
+    private List<User> users;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setTitleTextColor(Color.WHITE);
+        initialized();
 
-        login_id=getIntent().getStringExtra("login_id");
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(adapter);
 
 
-        recipewrite = findViewById(R.id.recipewrite);
-
-        recipewrite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(recipe.this,recipe_write.class);
-                intent.putExtra("login_id",login_id);
-                startActivity(intent);
-
-            }
+        add.setOnClickListener(v -> {
+            move();
         });
-
-
-
-
-//리스트
-
-        recipeListView = findViewById(R.id.recipeListView);
-        recipeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                Intent intent = new Intent(recipe.this,recipe_detail.class);
-                intent.putExtra("board_seq",seqList.get(i));
-                intent.putExtra("login_id",login_id);
-                startActivity(intent);
-
-            }
-        });
-
-        ArrayAdapter<String> listadapter = new ArrayAdapter<String>(recipe.this,android.R.layout.simple_list_item_1,titleList);
-        recipeListView.setAdapter(listadapter);
-
-        listadapter.notifyDataSetChanged();
-
-
-
-
-
-
-
-
-        //스피너
-        Spinner typeSpinner = findViewById(R.id.typeSpinner);
-        /*ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        typeSpinner.setAdapter(adapter);*/
-
-        typeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-
-
-
     }
 
 
+    private void initialized() {
+        add = findViewById(R.id.addMemo);
 
+        recyclerView = findViewById(R.id.mainRecyclerView);
+        linearLayoutManager = new LinearLayoutManager(this);
+        adapter = new RecyclerAdapter();
 
+        users = AppDatabase.getInstance(this).userDao().getAll();
+        int size = users.size();
+        for(int i = 0; i < size; i++){
+            adapter.addItem(users.get(i));
+        }
+    }
 
+    private void move() {
+        Intent intent = new Intent(getApplicationContext(), SaveMemoActivity.class);
+        startActivity(intent);
+    }
 
-
-
+    @Override
+    protected void onStart() {
+        users = AppDatabase.getInstance(this).userDao().getAll();
+        adapter.addItems((ArrayList) users);
+        super.onStart();
+    }
 
 }
