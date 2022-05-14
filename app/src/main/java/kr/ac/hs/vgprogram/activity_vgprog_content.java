@@ -119,8 +119,8 @@ public class activity_vgprog_content extends AppCompatActivity {
                     startActivity(intent);
 
                 } else if (id == R.id.menu_item2) {
-                    //Intent intent = new Intent(getApplicationContext(), recipe.class);
-                    //startActivity(intent);
+                    Intent intent = new Intent(getApplicationContext(), recipe.class);
+                    startActivity(intent);
                 } else if (id == R.id.menu_item3) {
                     Intent intent = new Intent(getApplicationContext(), mypage.class);
                     startActivity(intent);
