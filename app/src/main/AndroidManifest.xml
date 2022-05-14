@@ -3,12 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="kr.ac.hs.vgprogram">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,10 +21,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vgprogram"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+       >
         <activity
             android:name=".foodfd"
             android:exported="false" />
+
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -40,12 +47,21 @@
             android:exported="true"
             android:label="@string/title_activity_maps" />
         <activity
+            android:name=".SaveMemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
+
+
+
+        <activity
             android:name=".recipe"
             android:label="채식라이프" />
         <activity android:name=".mypage" />
-        <activity
-            android:name=".idfind"
-            android:exported="false" />
+
+
+
         <activity android:name=".signup" />
         <activity
             android:name=".MyAdapter"
