@@ -14,8 +14,10 @@
         android:fitsSystemWindows="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:openDrawer="start">
 
         <!-- main content -->
@@ -25,6 +27,7 @@
             android:layout_height="match_parent" />
 
         <!-- navigation drawer-->//사이드 메뉴바의 헤더
+
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/nav_view"
             android:layout_width="wrap_content"

@@ -1,26 +1,20 @@
 package kr.ac.hs.vgprogram;
 
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
-
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
-
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -125,10 +119,13 @@ public class activity_vgprog_content extends AppCompatActivity {
                     startActivity(intent);
 
                 } else if (id == R.id.menu_item2) {
-                    Intent intent = new Intent(getApplicationContext(), recipe.class);
-                    startActivity(intent);
+                    //Intent intent = new Intent(getApplicationContext(), recipe.class);
+                    //startActivity(intent);
                 } else if (id == R.id.menu_item3) {
                     Intent intent = new Intent(getApplicationContext(), mypage.class);
+                    startActivity(intent);
+                } else if (id == R.id.menu_item4) {
+                    Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
                     startActivity(intent);
                 }
 
