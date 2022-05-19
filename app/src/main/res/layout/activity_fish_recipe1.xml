@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fish_recipe1"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="286dp"
+                app:srcCompat="@drawable/fish1" />
+
+            <TextView
+                android:id="@+id/rgr_title"
+                android:layout_width="350dp"
+                android:layout_height="46dp"
+                android:gravity="center"
+                android:text="              비건 참치찌개 레시피"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rgv_material"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[재료]"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/rgv_material_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="김치 썰어서 1공기, 김치 국물 1컵, 비건 참치 3수저, 비건 새우 5마리 (또는 두부 반모), 당면 조금, 대파 적당히, 청양고추 2개, 알배추 작은 거 5장, 새송이버섯 1개, 들기름 4수저, 유기농 설탕 반 수저, 매실청 2수저, 간장 2수저, 고추장 1수저, 다시마 1장"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+
+
+            <TextView
+                android:id="@+id/rgv_recipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[조리법]"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:videoId="mDmAHtyGuzY"
+                app:autoPlay="false"
+                app:showYouTubeButton="true"/>
+
+
+
+            <TextView
+                android:id="@+id/rgv_recipe_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. 당면 미리 불리기\n
+2. 들기름 4수저 두르고 중불로 대파와 김치를 볶아요. \n
+3. 얼큰하게 고춧가루도 1수저, 매실청 2수저, 간장 2수저, 고추장 1수저 넣어 섞어주고 달달 볶습니다.\n
+4. 양념이 섞이고 잘 볶아졌으면 이제 물을 부어 줄 거예요.\n
+5. 다시마 1장 이물질 제거 후 넣어 주세요.\n
+6. 재료가 충분히 잠기게 물을 붓고 중불로 올려 끓입니다.\n
+7. 국물이 팔팔 끓으면 다시마를 건져내고 알배추, 새송이버섯, 청양고추 넣고 비건 참치 3수저 넣습니다. 비건 새우도 넣고요. 두부도 있으면 넣으세요.\n
+8. 국물이 끓을 동안 따로 물을 끓여, 불려둔 당면 데친 후 찬물에 헹궈 채반에 건져 둡니다.\n
+9. 끓으면 간을 보고 김치 국물 1컵 정도 넣어 간을 맞추면 비건 참치 김치찌개 완성입니다.\n\n"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/vgr_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="댓글" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/EditText_chat"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/Button_send"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="SEND" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/my_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="495dp"
+                    android:layout_weight="1"
+                    android:scrollbars="vertical">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

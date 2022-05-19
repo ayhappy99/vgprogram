@@ -48,6 +48,8 @@ public class activity_vgprog_content extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_dehaze_48);
 
 
+
+
         ImageButton beef = findViewById(R.id.beefbtn);
         beef.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +59,7 @@ public class activity_vgprog_content extends AppCompatActivity {
         });
 
         ImageButton chick = findViewById(R.id.chickbtn);
-        beef.setOnClickListener(new View.OnClickListener() {
+        chick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -65,33 +67,41 @@ public class activity_vgprog_content extends AppCompatActivity {
         });
 
         ImageButton eggg = findViewById(R.id.egggbtn);
-        beef.setOnClickListener(new View.OnClickListener() {
+        eggg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),eggbtn.class);
+                startActivity(intent);
 
             }
         });
 
         ImageButton fish = findViewById(R.id.fishbtn);
-        beef.setOnClickListener(new View.OnClickListener() {
+        fish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),fishbtn.class);
+                startActivity(intent);
 
             }
         });
 
         ImageButton milk = findViewById(R.id.milkbtn);
-        beef.setOnClickListener(new View.OnClickListener() {
+        milk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),milkbtn.class);
+                startActivity(intent);
 
             }
         });
 
         ImageButton vege = findViewById(R.id.vegebtn);
-        beef.setOnClickListener(new View.OnClickListener() {
+        vege.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),vegebtn.class);
+                startActivity(intent);
 
             }
         });
