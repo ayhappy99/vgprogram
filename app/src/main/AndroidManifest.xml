@@ -45,10 +45,22 @@
             android:name=".vege_recipe1"
             android:exported="false" />
         <activity
+            android:name=".beef_recipe1"
+            android:exported="false" />
+        <activity
+            android:name=".chick_recipe1"
+            android:exported="false" />
+        <activity
             android:name=".vegebtn"
             android:exported="false" />
         <activity
             android:name=".foodfd"
+            android:exported="false" />
+        <activity
+            android:name=".beefbtn"
+            android:exported="false" />
+        <activity
+            android:name=".chickbtn"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.

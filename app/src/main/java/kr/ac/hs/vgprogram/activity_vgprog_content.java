@@ -54,6 +54,8 @@ public class activity_vgprog_content extends AppCompatActivity {
         beef.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),beefbtn.class);
+                startActivity(intent);
 
             }
         });
@@ -62,6 +64,8 @@ public class activity_vgprog_content extends AppCompatActivity {
         chick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),chickbtn.class);
+                startActivity(intent);
 
             }
         });
@@ -105,7 +109,6 @@ public class activity_vgprog_content extends AppCompatActivity {
 
             }
         });
-
 
 
 

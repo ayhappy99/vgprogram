@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="286dp"
+                app:srcCompat="@drawable/chicken" />
+
+            <TextView
+                android:id="@+id/rgr_title"
+                android:layout_width="350dp"
+                android:layout_height="46dp"
+                android:gravity="center"
+                android:text="              삼계탕 레시피"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rgv_material"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[재료]"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="211dp"
+                app:srcCompat="@drawable/chick_frag" />
+
+            <TextView
+                android:id="@+id/rgv_material_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- 닭 500g\n -찹쌀 1/4컵\n -황기 3뿌리\n -대추 5알\n -마늘 10알\n -수삼 1뿌리\n -물 2.5L\n -다진 대파\n\n"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+
+            <TextView
+                android:id="@+id/rgv_recipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[조리법]"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:videoId="kcn58Ti0maY"
+                app:autoPlay="false"
+                app:showYouTubeButton="true"/>
+
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="396dp"
+                android:layout_height="246dp"
+                app:srcCompat="@drawable/chick_ready" />
+
+            <TextView
+                android:id="@+id/rgv_recipe_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1) 먼저 냄비에 물과 황기를 넣고 '강불'에서 끓여 주세요.\n
+2) 끓어오르면 '중불'에서 총 40분간 끓이세요.\n
+- 황기를 넣으면, 닭이 더욱 쫄깃하고 잡내가 없어진다고 해요.\n
+- 그리고 소화도 더 잘된다고 해요.\n
+3) 닭기름기가 많은 부위를 제거하고, 날개 부분 날카로운 곳을 제거하세요.\n
+4) 내장 부분에 핏덩이도 깨끗이 제거하고\n
+5) 속 부분과 겉 부분을 물로 깨끗이 씻으세요.\n
+6) 대추에는 칼집을 내주세요.\n
+7) 닭 허벅지 쪽에 가위집을 내고,\n
+8) 내장 부분에 마늘, 대추를 넣어 주세요.\n
+-그래야 쌀이 빠지지 않아요.\n
+9) 불린 찹쌀을 넣어주고, 수삼, 마늘, 대추로 마무리해주세요.\n
+10) 닭 허벅지 쪽에 반대편 다리를 꽃아 주세요.\n
+11) 40분이 지나면 황기를 빼고\n
+12) 닭, 마늘, 대추를 넣고, '강불'에서 끓이다가\n
+13) 끓으면, '중불'에서 총 40분 동안 끓이세요.\n
+14) 40분 후, '강불'에서 소주 1T를 넣고 30초간 끓이고 꺼주세요.\n
+* 기호에 따라, 소금, 파, 후추 등을 넣어 드세요.\n\n"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/vgr_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="댓글" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/EditText_chat"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/Button_send"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="SEND" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/my_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="495dp"
+                    android:layout_weight="1"
+                    android:scrollbars="vertical">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
