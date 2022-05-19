@@ -85,14 +85,15 @@
                 android:layout_alignParentTop="true"
 
                 android:src="@drawable/vege"/>
+
             <ImageButton
+                android:id="@+id/milkbtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/milkbtn"
-                android:padding="0dp"
-                android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
-                android:src="@drawable/milk"/>
+                android:layout_centerHorizontal="true"
+                android:padding="0dp"
+                android:src="@drawable/milk" />
             <ImageButton
                 android:id="@+id/egggbtn"
                 android:layout_width="wrap_content"

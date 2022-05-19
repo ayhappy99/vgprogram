@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".milk_recipe1"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="286dp"
+                app:srcCompat="@drawable/milk1" />
+
+
+            <TextView
+                android:id="@+id/rgr_title"
+                android:layout_width="350dp"
+                android:layout_height="46dp"
+                android:gravity="center"
+                android:text="              양송이 감자 스프"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/rgv_material"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[재료]"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+
+            <TextView
+                android:id="@+id/rgv_material_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="재료 : 캐슈넛 100g, 무가당 두유 210ml,  감자 300g, 양파 200g, 마늘 3톨, 양송이 400g
+"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+
+
+            <TextView
+                android:id="@+id/rgv_recipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[조리법]"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:videoId="Wv6xB9BfCwI"
+                app:autoPlay="false"
+                app:showYouTubeButton="true"/>
+
+
+
+            <TextView
+                android:id="@+id/rgv_recipe_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="
+1. 캐슈넛이 블랜더에 잘 갈릴 수 있도록 뜨거운 물에 미리 담가놓는다.\n
+2. 감자와 양파는 블랜더에 갈 예정이기 때문에 편하게 잘라준다. 양송이도 잘라 놓는다.\n
+3. 올리브오일을 살짝 붓고 양파를 먼저 익혀준 후 감자와 마늘을 볶는다.\n
+4. 재료들이 잠길 때까지 두유를 붓고 감자가 익을 때까지 끓입니다.\n
+5. 감자가 익으면 블랜더에 육수와 함께 그대로 부어 곱게 갈아준다.\n
+6. 양송이는 따로 볶아준다.\n
+7. 양송이에 블렌딩한 재료를 넣고 골고루 섞어준 후 중약 불로 1분 정도 더 끓여준다.\n
+8. 소금 간을 하고 미리 불려둔 캐슈넛을 갈아서 부어준다. \n\n"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/vgr_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="댓글" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/EditText_chat"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/Button_send"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="SEND" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/my_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="495dp"
+                    android:layout_weight="1"
+                    android:scrollbars="vertical">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

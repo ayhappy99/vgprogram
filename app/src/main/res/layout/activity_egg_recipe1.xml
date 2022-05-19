@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".egg_recipe1"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="286dp"
+                app:srcCompat="@drawable/egg1" />
+
+            <TextView
+                android:id="@+id/rgr_title"
+                android:layout_width="350dp"
+                android:layout_height="46dp"
+                android:gravity="center"
+                android:text="              두부 스크램블 레시피"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rgv_material"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[재료]"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/rgv_material_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="두부 500g, 마늘 3쪽, 양파 반 개, 올리브유 1큰 술, 뉴트리셔널 이스트 2큰 술, 강황 1/2티스푼, 마늘가루 1티스푼, 후추 약간, 소금 세 꼬집"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+
+
+            <TextView
+                android:id="@+id/rgv_recipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[조리법]"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="396dp"
+                android:layout_height="246dp"
+                app:srcCompat="@drawable/egg2" />
+
+            <TextView
+                android:id="@+id/rgv_recipe_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1) 먼저 두부에 있는 물기를 빼줄게요. 두부를 잘라서 큰 그릇에 넣고 물이 어느 정도 빠질 때까지 기다려주세요. \n
+2) 마늘을 잘게 다져주세요!\n
+3) 양파도 잘게 다져주세요!\n
+4) 물기가 쫙 빠진 주걱으로 두부를 으깨주세요.\n
+5) 팬을 달궈주신 후에 올리브유를 넣어주세요.\n
+6) 양파와 마늘을 넣어서 노릇노릇해질 때까지 함께 볶아주세요.\n
+7) 으깬 두부를 넣어주세요.\n\n"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/vgr_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="댓글" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/EditText_chat"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/Button_send"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="SEND" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/my_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="495dp"
+                    android:layout_weight="1"
+                    android:scrollbars="vertical">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

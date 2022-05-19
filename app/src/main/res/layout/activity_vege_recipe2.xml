@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="286dp"
+                app:srcCompat="@drawable/vege2" />
+
+
+            <TextView
+                android:id="@+id/rgr_title"
+                android:layout_width="350dp"
+                android:layout_height="46dp"
+                android:gravity="center"
+                android:text="              채식 짬뽕 레시피"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/rgv_material"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[재료]"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+
+            <TextView
+                android:id="@+id/rgv_material_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="재료 : 배춧잎 3장, 양파 1/4개, 표고버섯 2개, 애호박 1/4개, 당근 1/4개, 청경채 1포기, 대파 반 대, (좋아하는 채소 아무거나), 중화면
+"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/rgv_sauce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[소스]"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rgv_sauce_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="양념 : 고춧가루 2.5스푼, 진간장 1스푼, 국간장 2스푼, 다진 마늘 1스푼, 설탕 조금, 소금, 후추 (천연조미료가 있다면 넣어주셔도 좋아요)"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/rgv_recipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[조리법]"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:videoId="pYNtwxcWZUc"
+                app:autoPlay="false"
+                app:showYouTubeButton="true"/>
+
+
+
+            <TextView
+                android:id="@+id/rgv_recipe_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. 기름에 대파, 고춧가루 2~2.5스푼 넣고 볶는다.\n2. 진간장 1스푼 넣어 볶는다.\n
+3. 물(또는 채수) 2컵 붓는다.\n
+4. 물이 끓으면 채소를 넣는다.
+(채수가 우러나오도록 푹 끓이기)\n
+5. 청경채를 넣고, 간 맞추면 끝^^\n\n"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/vgr_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="댓글" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/EditText_chat"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/Button_send"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="SEND" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/my_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="495dp"
+                    android:layout_weight="1"
+                    android:scrollbars="vertical">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
