@@ -54,9 +54,6 @@
             android:name=".vegebtn"
             android:exported="false" />
         <activity
-            android:name=".foodfd"
-            android:exported="false" />
-        <activity
             android:name=".beefbtn"
             android:exported="false" />
         <activity
@@ -90,7 +87,6 @@
         <activity
             android:name=".recipe"
             android:label="채식라이프" />
-        <activity android:name=".mypage" />
         <activity android:name=".signup" />
         <activity
             android:name=".MyAdapter"

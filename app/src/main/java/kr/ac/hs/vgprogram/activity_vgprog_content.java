@@ -128,16 +128,10 @@ public class activity_vgprog_content extends AppCompatActivity {
                 String title = item.getTitle().toString();
 
                 if (id == R.id.menu_item1) {
-                    Intent intent = new Intent(getApplicationContext(), foodfd.class);
+                    Intent intent = new Intent(getApplicationContext(), recipe.class);
                     startActivity(intent);
 
                 } else if (id == R.id.menu_item2) {
-                    Intent intent = new Intent(getApplicationContext(), recipe.class);
-                    startActivity(intent);
-                } else if (id == R.id.menu_item3) {
-                    Intent intent = new Intent(getApplicationContext(), mypage.class);
-                    startActivity(intent);
-                } else if (id == R.id.menu_item4) {
                     Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
                     startActivity(intent);
                 }
