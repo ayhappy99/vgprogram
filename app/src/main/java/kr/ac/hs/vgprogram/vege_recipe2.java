@@ -71,7 +71,7 @@ public class vege_recipe2 extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         FirebaseDatabase database =FirebaseDatabase.getInstance();
-        myRef = database.getReference("comment");
+        myRef = database.getReference("vg_comment2");
 //
 ////        commentData comD=new commentData();
 ////        comD.setNicname(email);
@@ -83,10 +83,10 @@ public class vege_recipe2 extends AppCompatActivity {
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s){
-                Log.i("COMMENT",dataSnapshot.getValue().toString());
+                Log.i("vg_comment2",dataSnapshot.getValue().toString());
 
-                commentData commment = dataSnapshot.getValue(commentData.class);
-                ((commentAdapter) mAdapter).addCom(commment);
+                commentData vg_comment2 = dataSnapshot.getValue(commentData.class);
+                ((commentAdapter) mAdapter).addCom(vg_comment2);
 
 
             }
