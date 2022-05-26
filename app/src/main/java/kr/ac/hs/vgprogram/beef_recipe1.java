@@ -73,7 +73,7 @@ public class beef_recipe1 extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         FirebaseDatabase database =FirebaseDatabase.getInstance();
-        myRef = database.getReference("comment");
+        myRef = database.getReference("be_comment1");
 //
 ////        commentData comD=new commentData();
 ////        comD.setNicname(email);
@@ -85,10 +85,10 @@ public class beef_recipe1 extends AppCompatActivity {
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s){
-                Log.i("COMMENT",dataSnapshot.getValue().toString());
+                Log.i("be_comment1",dataSnapshot.getValue().toString());
 
-                commentData commment = dataSnapshot.getValue(commentData.class);
-                ((commentAdapter) mAdapter).addCom(commment);
+                commentData be_comment1 = dataSnapshot.getValue(commentData.class);
+                ((commentAdapter) mAdapter).addCom(be_comment1);
 
 
             }
